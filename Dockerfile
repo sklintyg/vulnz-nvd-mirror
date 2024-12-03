@@ -1,5 +1,5 @@
 ARG from_image
-FROM $from_image
+FROM httpd:alpine
 
 ARG from_image
 ARG project_name
