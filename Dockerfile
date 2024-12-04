@@ -56,6 +56,9 @@ RUN apk update && \
     chown -R "$user":"$user" /usr/local/apache2/htdocs && \
     mkdir -p /var/log/supervisor && \
     chown -R "$user":"$user" /var/log && \
+    chown -R "$user":"$user" /usr/local/apache2 && \
+    touch /var/run/supervisord.pid && \
+    chown "$user":"$user" /var/run/supervisord.pid && \
     rm -v /usr/local/apache2/htdocs/index.html
 
 COPY ["/vulnz/src/docker/supervisor/supervisord.conf", "/etc/supervisord.conf"]
