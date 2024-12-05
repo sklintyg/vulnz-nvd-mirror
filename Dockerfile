@@ -14,7 +14,7 @@ ARG vcs_ref
 
 ARG BUILD_DATE
 #Should be set automaticaly from artifact.version (which is 7.0.2.x) but i cant manage. So hard-code it is
-ENV BUILD_VERSION=7.0.2
+ENV BUILD_VERSION=7.0.1
 
 ARG http_proxy
 ARG https_proxy
@@ -45,7 +45,7 @@ LABEL org.label-schema.version=$BUILD_VERSION
 LABEL org.label-schema.docker.cmd="docker run -it --rm --name mirror -e NVD_API_KEY=YOUR_API_KEY_HERE -p 80:80 jeremylong/vulnz"
 
 ENV user=mirror
-ENV JAVA_OPT=-XX:InitialRAMPercentage=50.0 -XX:MaxRAMPercentage=80.0
+ENV JAVA_OPT=-Xmx2g
 
 RUN apk update && \
     apk add --no-cache bash openjdk17 dcron nss supervisor tzdata && \
