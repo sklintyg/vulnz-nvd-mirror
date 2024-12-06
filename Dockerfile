@@ -14,7 +14,7 @@ ARG vcs_ref
 
 ARG BUILD_DATE
 #Should be set automaticaly from artifact.version (which is 7.0.2.x) but i cant manage. So hard-code it is
-ENV BUILD_VERSION=7.0.1
+ENV BUILD_VERSION=6.2.0
 
 ARG http_proxy
 ARG https_proxy
