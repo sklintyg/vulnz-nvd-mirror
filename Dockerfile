@@ -45,7 +45,7 @@ LABEL org.label-schema.version=$BUILD_VERSION
 LABEL org.label-schema.docker.cmd="docker run -it --rm --name mirror -e NVD_API_KEY=YOUR_API_KEY_HERE -p 80:80 jeremylong/vulnz"
 
 ENV user=mirror
-ENV JAVA_OPT=-Xmx2g
+ENV JAVA_OPT=-Xmx3g
 
 RUN apk update && \
     apk add --no-cache bash openjdk17 dcron nss supervisor tzdata && \
